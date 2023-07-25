@@ -1,6 +1,6 @@
 # eslint-plugin-consistently-renamed-imports
 
-Enforce specified modules to be renamend consistently when loaded by import
+Enforce specified modules to be renamed consistently when loaded by import
 
 ## Installation
 
@@ -44,5 +44,3 @@ Then configure the rules you want to use under the rules section.
 <!-- begin auto-generated rules list -->
 TODO: Run eslint-doc-generator to generate the rules list.
 <!-- end auto-generated rules list -->
-
-
