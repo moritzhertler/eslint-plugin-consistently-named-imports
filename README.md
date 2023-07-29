@@ -42,5 +42,9 @@ Then configure the rules you want to use under the rules section.
 ## Rules
 
 <!-- begin auto-generated rules list -->
-TODO: Run eslint-doc-generator to generate the rules list.
+
+| Name                                                                       | Description                                                                  |
+| :------------------------------------------------------------------------- | :--------------------------------------------------------------------------- |
+| [consistently-renamed-imports](docs/rules/consistently-renamed-imports.md) | Enforce specified modules to be renamed consistently when loaded by `import` |
+
 <!-- end auto-generated rules list -->
