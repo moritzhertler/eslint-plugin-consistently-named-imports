@@ -3,6 +3,10 @@
   "version": "0.1.0",
   "description": "Enforce specified modules to be named consistently when loaded by import",
   "homepage": "https://github.com/moritzhertler/eslint-plugin-consistently-named-imports",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/moritzhertler/eslint-plugin-consistently-named-imports"
+  },
   "keywords": [
     "eslint",
     "eslintplugin",
