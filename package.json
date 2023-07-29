@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-consistently-renamed-imports",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Enforce specified modules to be renamed consistently when loaded by import",
   "keywords": [
     "eslint",
@@ -18,6 +18,7 @@
     "update:eslint-docs": "eslint-doc-generator"
   },
   "dependencies": {
+    "ignore": "^5.2.4",
     "requireindex": "^1.2.0"
   },
   "devDependencies": {
@@ -32,7 +33,7 @@
     "node": "^14.17.0 || ^16.0.0 || >= 18.0.0"
   },
   "peerDependencies": {
-    "eslint": ">=7"
+    "eslint": ">=8"
   },
   "license": "ISC"
 }
