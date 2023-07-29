@@ -2,6 +2,7 @@
   "name": "eslint-plugin-consistently-renamed-imports",
   "version": "0.1.0",
   "description": "Enforce specified modules to be renamed consistently when loaded by import",
+  "homepage": "https://github.com/moritzhertler/eslint-plugin-consistently-renamed-imports",
   "keywords": [
     "eslint",
     "eslintplugin",
