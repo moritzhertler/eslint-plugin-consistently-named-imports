@@ -9,7 +9,7 @@ Naming conflicts can appear in many cases, for example
 -   when migrating from one library to another and both libraries export `foo` or
 -   your codebase uses the value `foo` and you want to use a library that also exports `foo`.
 
-By itself, javascript does not allow you to import `foo` into the same scope twice. You will have to rename at least one of them. But this might not be enough for readability as `foo` could mean two different things in different scopes.
+By itself, javascript does not allow you to import `foo` into the same scope twice. You will have to rename at least one of the imports. But this might not be enough for readability as `foo` could mean two different things in different scopes.
 
 Example:
 
@@ -65,8 +65,8 @@ The syntax to specify restricted names looks like this:
 
 ```json
 "consistently-renamed-imports/consistently-renamed-imports": [
-	"error",
-	"foo",
+    "error",
+    "foo",
     "bar",
 ]
 ```
@@ -75,8 +75,8 @@ or like this:
 
 ```json
 "consistently-renamed-imports/consistently-renamed-imports": [
-	"error",
-	{
+    "error",
+    {
         "importNames": ["foo", "bar"]
     }
 ]
@@ -86,8 +86,8 @@ When using the object form, you can also specify the import source in an array o
 
 ```json
 "consistently-renamed-imports/consistently-renamed-imports": [
-	"error",
-	{
+    "error",
+    {
         "importNames": ["foo", "bar"],
         "sources": ["source1/baz/*", "source2/*", "!source2/good"]
     }
@@ -98,8 +98,8 @@ The name a restricted import has to be renamed to, can also be configured:
 
 ```json
 "consistently-renamed-imports/consistently-renamed-imports": [
-	"error",
-	{
+    "error",
+    {
         "importNames": [
             { "name": "foo", "desiredName": "fooA" },
             "bar"
@@ -112,8 +112,8 @@ To recreate the example use:
 
 ```json
 "consistently-renamed-imports/consistently-renamed-imports": [
-	"error",
-	{
+    "error",
+    {
         "importNames": [{ "name": "foo", "desiredName": "fooA" }],
         "sources": ["A"]
     },
@@ -153,10 +153,11 @@ import { foo } from "A";
 
 ```js
 /* eslint consistently-renamed-imports/consistently-renamed-imports: ["error", 
-    { 
-        "importNames": [{ "name": "foo", "desiredName": "fooA" }], 
-        "sources": ["A"]
-    } 
+        { 
+            "importNames": [{ "name": "foo", "desiredName": "fooA" }], 
+            "sources": ["A"]
+        }
+    ]
 */
 
 import { foo as bar } from "A";
@@ -164,10 +165,11 @@ import { foo as bar } from "A";
 
 ```js
 /* eslint consistently-renamed-imports/consistently-renamed-imports: ["error", 
-    { 
-        "importNames": ["foo", "bar"], 
-        "sources": ["A"]
-    } 
+        { 
+            "importNames": ["foo", "bar"], 
+            "sources": ["A"]
+        }
+    ]
 */
 
 import { foo as bar } from "A";
@@ -184,10 +186,11 @@ import { baz } from "B";
 
 ```js
 /* eslint consistently-renamed-imports/consistently-renamed-imports: ["error", 
-    { 
-        "importNames": ["foo"], 
-        "sources": ["A"]
-    } 
+        { 
+            "importNames": ["foo"], 
+            "sources": ["A"]
+        }
+    ]
 */
 
 import { foo } from "B";
@@ -206,10 +209,11 @@ import { foo as bar } from "A";
 
 ```js
 /* eslint consistently-renamed-imports/consistently-renamed-imports: ["error", 
-    { 
-        "importNames": [{ "name": "foo", "desiredName": "fooA" }], 
-        "sources": ["A"]
-    } 
+        { 
+            "importNames": [{ "name": "foo", "desiredName": "fooA" }], 
+            "sources": ["A"]
+        }
+    ]
 */
 
 import { foo as fooA } from "A";
@@ -217,21 +221,23 @@ import { foo as fooA } from "A";
 
 ```js
 /* eslint consistently-renamed-imports/consistently-renamed-imports: ["error", 
-    { 
-        "importNames": ["foo"], 
-        "sources": ["A"]
-    } 
+        { 
+            "importNames": ["foo"], 
+            "sources": ["A"]
+        }
+    ]
 */
 
-import * as A from "A";
+import * as LibA from "A";
 ```
 
 ```js
 /* eslint consistently-renamed-imports/consistently-renamed-imports: ["error", 
-    { 
-        "importNames": ["foo"], 
-        "sources": ["A"]
-    } 
+        { 
+            "importNames": ["foo"], 
+            "sources": ["A"]
+        }
+    ]
 */
 
 import * as foo from "A";
@@ -239,13 +245,13 @@ import * as foo from "A";
 
 ## Attention
 
-Do not use a restricted names as a desired name.
+Do not use a restricted name as a desired name.
 The resulting error can not be fixed:
 
 ```json
 "consistently-renamed-imports/consistently-renamed-imports": [
-	"error",
-	{
+    "error",
+    {
         "importNames": [
             { "name": "foo", "desiredName": "bar" },
             "bar",
