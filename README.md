@@ -1,6 +1,6 @@
-# eslint-plugin-consistently-renamed-imports
+# eslint-plugin-consistently-named-imports
 
-Enforce specified modules to be renamed consistently when loaded by import
+Enforce specified modules to be named consistently when loaded by import
 
 ## Installation
 
@@ -10,20 +10,20 @@ You'll first need to install [ESLint](https://eslint.org/):
 npm i eslint --save-dev
 ```
 
-Next, install `eslint-plugin-consistently-renamed-imports`:
+Next, install `eslint-plugin-consistently-named-imports`:
 
 ```sh
-npm install eslint-plugin-consistently-renamed-imports --save-dev
+npm install eslint-plugin-consistently-named-imports --save-dev
 ```
 
 ## Usage
 
-Add `consistently-renamed-imports` to the plugins section of your `.eslintrc` configuration file. You can omit the `eslint-plugin-` prefix:
+Add `consistently-named-imports` to the plugins section of your `.eslintrc` configuration file. You can omit the `eslint-plugin-` prefix:
 
 ```json
 {
     "plugins": [
-        "consistently-renamed-imports"
+        "consistently-named-imports"
     ]
 }
 ```
@@ -34,7 +34,7 @@ Then configure the rules you want to use under the rules section.
 ```json
 {
     "rules": {
-        "consistently-renamed-imports/rule-name": 2
+        "consistently-named-imports/rule-name": 2
     }
 }
 ```
@@ -43,8 +43,8 @@ Then configure the rules you want to use under the rules section.
 
 <!-- begin auto-generated rules list -->
 
-| Name                                                                       | Description                                                                  |
-| :------------------------------------------------------------------------- | :--------------------------------------------------------------------------- |
-| [consistently-renamed-imports](docs/rules/consistently-renamed-imports.md) | Enforce specified modules to be renamed consistently when loaded by `import` |
+| Name                                                                   | Description                                                                |
+| :--------------------------------------------------------------------- | :------------------------------------------------------------------------- |
+| [consistently-named-imports](docs/rules/consistently-named-imports.md) | Enforce specified modules to be named consistently when loaded by `import` |
 
 <!-- end auto-generated rules list -->

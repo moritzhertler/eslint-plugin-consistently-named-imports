@@ -1,5 +1,5 @@
 /**
- * @fileoverview Tests for consistently-renamed-imports.
+ * @fileoverview Tests for consistently-named-imports.
  * @author Moritz Hertler
  */
 
@@ -10,7 +10,7 @@
 //------------------------------------------------------------------------------
 
 const { RuleTester } = require("eslint");
-const rule = require("../../../lib/rules/consistently-renamed-imports");
+const rule = require("../../../lib/rules/consistently-named-imports");
 
 //------------------------------------------------------------------------------
 // Tests
@@ -20,7 +20,7 @@ const ruleTester = new RuleTester({
     parserOptions: { ecmaVersion: 2022, sourceType: "module" },
 });
 
-ruleTester.run("consistently-renamed-imports", rule, {
+ruleTester.run("consistently-named-imports", rule, {
     valid: [
         'import foo from "foo";',
         {

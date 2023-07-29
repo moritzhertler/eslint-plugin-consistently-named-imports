@@ -1,8 +1,8 @@
-# Enforce specified modules to be renamed consistently when loaded by `import` (`consistently-renamed-imports/consistently-renamed-imports`)
+# Enforce specified modules to be named consistently when loaded by `import` (`consistently-named-imports/consistently-named-imports`)
 
 <!-- end auto-generated rule header -->
 
-Why would you want to restrict imports if they are not renamed consistently?
+Why would you want to restrict imports if they are not named consistently?
 
 Naming conflicts can appear in many cases, for example
 
@@ -55,7 +55,7 @@ Now, the meaning of `fooA` and `fooB` is consistent throughout the codebase.
 
 ## Rule Details
 
-This rule allows you to specify imports that you want to be renamed consistently.
+This rule allows you to specify imports that you want to be named consistently.
 
 It applies to static imports only, not dynamic ones and ignores namespace imports.
 
@@ -64,7 +64,7 @@ It applies to static imports only, not dynamic ones and ignores namespace import
 The syntax to specify restricted names looks like this:
 
 ```json
-"consistently-renamed-imports/consistently-renamed-imports": [
+"consistently-named-imports/consistently-named-imports": [
     "error",
     "foo",
     "bar",
@@ -74,7 +74,7 @@ The syntax to specify restricted names looks like this:
 or like this:
 
 ```json
-"consistently-renamed-imports/consistently-renamed-imports": [
+"consistently-named-imports/consistently-named-imports": [
     "error",
     {
         "importNames": ["foo", "bar"]
@@ -85,7 +85,7 @@ or like this:
 When using the object form, you can also specify the import source in an array of gitignore-style patterns.
 
 ```json
-"consistently-renamed-imports/consistently-renamed-imports": [
+"consistently-named-imports/consistently-named-imports": [
     "error",
     {
         "importNames": ["foo", "bar"],
@@ -97,7 +97,7 @@ When using the object form, you can also specify the import source in an array o
 The name a restricted import has to be renamed to, can also be configured:
 
 ```json
-"consistently-renamed-imports/consistently-renamed-imports": [
+"consistently-named-imports/consistently-named-imports": [
     "error",
     {
         "importNames": [
@@ -111,7 +111,7 @@ The name a restricted import has to be renamed to, can also be configured:
 To recreate the example use:
 
 ```json
-"consistently-renamed-imports/consistently-renamed-imports": [
+"consistently-named-imports/consistently-named-imports": [
     "error",
     {
         "importNames": [{ "name": "foo", "desiredName": "fooA" }],
@@ -129,19 +129,19 @@ To recreate the example use:
 Examples of **incorrect** code for this rule:
 
 ```js
-/* eslint consistently-renamed-imports/consistently-renamed-imports: ["error", "foo"] */
+/* eslint consistently-named-imports/consistently-named-imports: ["error", "foo"] */
 
 import foo from "A";
 ```
 
 ```js
-/* eslint consistently-renamed-imports/consistently-renamed-imports: ["error", "foo"] */
+/* eslint consistently-named-imports/consistently-named-imports: ["error", "foo"] */
 
 import { foo } from "A";
 ```
 
 ```js
-/* eslint consistently-renamed-imports/consistently-renamed-imports: ["error", 
+/* eslint consistently-named-imports/consistently-named-imports: ["error", 
     { 
         "importNames": ["foo"], 
         "sources": ["A"]
@@ -152,7 +152,7 @@ import { foo } from "A";
 ```
 
 ```js
-/* eslint consistently-renamed-imports/consistently-renamed-imports: ["error", 
+/* eslint consistently-named-imports/consistently-named-imports: ["error", 
         { 
             "importNames": [{ "name": "foo", "desiredName": "fooA" }], 
             "sources": ["A"]
@@ -164,7 +164,7 @@ import { foo as bar } from "A";
 ```
 
 ```js
-/* eslint consistently-renamed-imports/consistently-renamed-imports: ["error", 
+/* eslint consistently-named-imports/consistently-named-imports: ["error", 
         { 
             "importNames": ["foo", "bar"], 
             "sources": ["A"]
@@ -178,14 +178,14 @@ import { foo as bar } from "A";
 Examples of **correct** code for this rule:
 
 ```js
-/* eslint consistently-renamed-imports/consistently-renamed-imports: ["error", "foo"] */
+/* eslint consistently-named-imports/consistently-named-imports: ["error", "foo"] */
 
 import bar from "A";
 import { baz } from "B";
 ```
 
 ```js
-/* eslint consistently-renamed-imports/consistently-renamed-imports: ["error", 
+/* eslint consistently-named-imports/consistently-named-imports: ["error", 
         { 
             "importNames": ["foo"], 
             "sources": ["A"]
@@ -197,7 +197,7 @@ import { foo } from "B";
 ```
 
 ```js
-/* eslint consistently-renamed-imports/consistently-renamed-imports: ["error", 
+/* eslint consistently-named-imports/consistently-named-imports: ["error", 
     { 
         "importNames": ["foo"], 
         "sources": ["A"]
@@ -208,7 +208,7 @@ import { foo as bar } from "A";
 ```
 
 ```js
-/* eslint consistently-renamed-imports/consistently-renamed-imports: ["error", 
+/* eslint consistently-named-imports/consistently-named-imports: ["error", 
         { 
             "importNames": [{ "name": "foo", "desiredName": "fooA" }], 
             "sources": ["A"]
@@ -220,7 +220,7 @@ import { foo as fooA } from "A";
 ```
 
 ```js
-/* eslint consistently-renamed-imports/consistently-renamed-imports: ["error", 
+/* eslint consistently-named-imports/consistently-named-imports: ["error", 
         { 
             "importNames": ["foo"], 
             "sources": ["A"]
@@ -232,7 +232,7 @@ import * as LibA from "A";
 ```
 
 ```js
-/* eslint consistently-renamed-imports/consistently-renamed-imports: ["error", 
+/* eslint consistently-named-imports/consistently-named-imports: ["error", 
         { 
             "importNames": ["foo"], 
             "sources": ["A"]
@@ -249,7 +249,7 @@ Do not use a restricted name as a desired name.
 The resulting error can not be fixed:
 
 ```json
-"consistently-renamed-imports/consistently-renamed-imports": [
+"consistently-named-imports/consistently-named-imports": [
     "error",
     {
         "importNames": [
